@@ -1,11 +1,16 @@
 import streamlit as st
+import os.path
+
+
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "../Dependencies")
 
 # Add a title to your app
 st.title("Results For Classification and Regression")
 
 image_options = {
-    "Classification": "/Users/josh2369/Downloads/image9.jpg",
-    "Regression": "/Users/josh2369/Downloads/image10.jpg",
+    "Classification": path + "/image9.jpg",
+    "Regression": path + "/image10.jpg",
    
 }
 

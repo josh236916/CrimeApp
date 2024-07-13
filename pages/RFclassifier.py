@@ -2,8 +2,14 @@ import numpy as np
 import pickle
 import streamlit as st
 import pandas as pd
+import os.path
 
-with open('/Users/josh2369/FYP/.venv/project/Dependencies/model2.pkl','rb') as model_file,open('/Users/josh2369/FYP/.venv/project/Dependencies/label_encoder.pkl','rb') as encoder_file:
+
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "../Dependencies")
+
+
+with open(path+'/model2.pkl','rb') as model_file,open(path+'/label_encoder.pkl','rb') as encoder_file:
     model=pickle.load(model_file)
     label_encoder=pickle.load(encoder_file)
 

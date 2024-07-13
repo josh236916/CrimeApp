@@ -2,8 +2,12 @@ import numpy as np
 import pickle
 import streamlit as st
 import pandas as pd
+import os.path
 
-loaded_model  = pickle.load(open('/Users/josh2369/FYP/.venv/project/Dependencies/trained_regressor.sav', 'rb'))
+my_path = os.path.abspath(os.path.dirname(__file__))
+path = os.path.join(my_path, "../Dependencies")
+
+loaded_model  = pickle.load(open(path +'/trained_regressor.sav', 'rb'))
 
 st.title('Communities and Crime Prediction App')
 
